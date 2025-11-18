@@ -1,0 +1,41 @@
+### test GET /users
+GET http://localhost:3000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImprIiwiaWF0IjoxNzYzMTA1NDcyLCJleHAiOjE3NjMxMDkwNzJ9.fHWnBFa1G5aey69j-TbSfzNe5_OwKce6tzrT9jEArAY
+Accept: application/json
+
+### test GET /data csv
+GET http://localhost:3000/users
+Accept: text/csv
+
+### test GET /users/1
+GET http://localhost:3000/users/1
+
+### test GET /users/9 that does not exist
+GET http://localhost:3000/users/9
+
+### test POST /users
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "forename":"Jyri",
+    "surname":"Kemppainen"
+}
+
+### test PUT /users
+PUT http://localhost:3000/users/4
+Content-Type: application/json
+
+{
+    "forename":"Petri",
+    "surname":"Laitinen"
+}
+
+### test post
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "username": "jk",
+    "password": "Sala"
+}
