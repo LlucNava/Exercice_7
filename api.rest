@@ -22,7 +22,7 @@ Content-Type: application/json
     "surname":"Kemppainen"
 }
 
-### test PUT /users
+### provem el PUT  amb el /users
 PUT http://localhost:3000/users/4
 Content-Type: application/json
 
@@ -31,7 +31,7 @@ Content-Type: application/json
     "surname":"Laitinen"
 }
 
-### test post
+### Provem el post
 POST http://localhost:3000/login
 Content-Type: application/json
 
@@ -39,3 +39,41 @@ Content-Type: application/json
     "username": "jk",
     "password": "Sala"
 }
+
+
+### Login test Esta Ok
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "username": "jk",
+  "password": "Sala"
+}
+
+### Test users esta to t be Ok
+GET http://localhost:3000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImprIiwiaWF0IjoxNzYzNDk0MzMzLCJleHAiOjE3NjM0OTc5MzN9.gFt54ovt12_kkctC8OnQV_k3-Vy-itXVVarQg-8uopQ
+Accept: application/json
+
+### Test unauthorized sense token, per tal no .Ok
+GET http://localhost:3000/users
+Accept: application/json
+
+### Test fake token error en teoria ok
+GET http://localhost:3000/users
+Authorization: Bearer asdasdsad.asdasdasd.123123
+
+
+### Test si ho faig 6 vegades (too meny) OK
+GET http://localhost:3000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImprIiwiaWF0IjoxNzYzNDk0MzMzLCJleHAiOjE3NjM0OTc5MzN9.gFt54ovt12_kkctC8OnQV_k3-Vy-itXVVarQg-8uopQ
+
+###  login mal fet OK
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "username": "jk",
+  "password": "WRONG"
+}
+
