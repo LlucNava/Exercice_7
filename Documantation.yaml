@@ -3,13 +3,13 @@ openapi: 3.0.3
 info:
   title: Login API Documentation
   version: 1.0.0
-  description: OpenAPI OAD for the /login endpoint as required in the assignment.
+  description: OpenAPI OAD for the /login.
 
 paths:
   /login:
     post:
       summary: User login
-      description: Authenticates a user and returns a JWT access token.
+      description: Authenticates a user and returns access token.
       tags:
         - auth
       requestBody:
@@ -41,7 +41,7 @@ paths:
                     example: jk
                   access_token:
                     type: string
-                    description: JWT token returned after successful login
+                    description: token returned after successful login
                   token_type:
                     type: string
                     example: Bearer
